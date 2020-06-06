@@ -1,0 +1,102 @@
+- As we've seen, Go is organized around packages with functions.
+As with all object-oriented languages, though,Go also supports the concept of methods,
+which are essentially functions, but they're owned by some structure or other type.
+In a more completely object-oriented language such as Java,
+you'd say that each method is a member of a class. In Go, a method is a member of a type.
+In this example, I'm going to show you how to attach a method to a struct, which is one sort of type,
+and I'm working with this version of a structure named Dog. It has three fields named Breed, Weight,
+and I've added a new field named Sound. Now to add a method, declare a separate function
+but add the type of the function's owner before the function name with an identifier
+wrapped in parentheses, like this. I'll start with the keyword func and then in parentheses first a unique identifier
+or a variable name, and then the data type that I'm attaching the method to. Then after that, define your method.
+This will be a simple method that doesn't receive any arguments,and doesn't return any values.
+Now, when the method is called, it'll receive a reference to the object that owns it,
+that'll be an instance of the Dog structure. and it will have access to all of the fields of that structure,
+so I'll be able to refer to them. I'll output the content of the sound, with fmt.Println and then (d.Sound).
+So now my structure has a single method named Speak. In the main method, I'll create an instance
+of the Dog struct. Once again, it will be named Poodle and I'll instantiate it with this code,
+Dog, the type, and then between the braces the values that I'm assigning. the Breed, the Weight,
+and the Sound that the dog makes, "woof", and then for debugging purposes, I'll verify that I've created the object.
+Then I'll call my new method, using DOT syntax I'll call the method poodle.Speak() and I'll test that.
+And there's the result! I see the dump of the object, and then I see the result of calling the Speak method.
+Now from within the main method where you created the poodle object you could also change the contents of the object
+and then call the method again. I'll change the sound that the poodle makes, from "Woof" to "Arf", like this.
+Poodle.sound = "Arf" and then I'll call the Speak method again. The first time it says Woof
+and the second time it says Arf. Now remember, there isn't any inheritance model for structures or other types,
+so each method has to have its own unique name and you can't have multiple versions of the method
+with different argument lists. For each method, you have the option to declare the type assigned to the method
+as either a value or a pointer. Right now D is a value. When the variable is passed into the function,
+a copy of the original object is made, and if any changes to the object are made within the function
+then those changes will not affect the original object outside the function itself. I'll demonstrate this by creating another function
+also a member of the Dog structure named SpeakThreeTimes. Once again I'll start with func and then the identifier and type,
+and then the method name, SpeakThreeTimes.  I'll use the Sprintf function to create
+a formatted string
+and assign that string to the sound field
+of the Dog object
+with d.Sound =
+then fmt.Sprintf().
+Now I'll make it make the sound three times.
+with %v and then I'll add in an exclamation
+which is a literal character
+then I'll copy that string
+and paste it twice
+and finish with a line feed.
+Then within the function I'll call fmt.Print()
+and I'll pass in d.Sound.
+Now I'll go back to my main function
+and I'll call poodle.SpeakThreeTimes.
+I don't need to pass in any arguments
+because the function is only using data
+that's available from the object.
+I'll save that change and I'll run the code,
+and I see that I'm missing values.
+So I'll go back to Sprintf,
+and I'll pass in the sound three times,
+once for each verb,
+with d.Sound three times, separated by commas.
+And I'll run again,
+and now I see that the dog says
+Arf three times, each time with an exclamation mark.
+But now let's see what happens
+if I call the same method again.
+I'll copy this call to the method,
+and paste it in,
+and save and run,
+and I see that the change
+that's made to the value of the object
+doesn't change the original version.
+The first time I called the method
+I'm modifying the sound field of the Dog object
+and then outputting it
+but when I call the method again,
+I'm starting off with the original object.
+So I'm receiving d as a value
+and not as a pointer.
+To change this,
+I'll add the asterisk operator before the type.
+And now I'll receive the Dog object
+as a pointer.
+I'll make some other changes here
+I'll take the line feed out for my formatted string
+and I'll change this call to fmt.Println.
+And then I'll run the code again
+and I'm seeing that the first time I call
+SpeakThreeTimes
+I'm modifying the field of the object
+but then when I call it again
+I'm getting the changed value,
+and that's because of the pointer.
+The changes I make within the function
+are now affecting the original object.
+The ability to create custom methods
+for your own types
+makes Go behave more like
+a fully object-oriented language
+even without the sort of type inheritance
+that you find in C++ and Java.
+If you're already comfortable
+with object-oriented programming
+in other languages,
+I think you'll find that Go's implementation of this
+is easy to use
+and the code is very readable.
