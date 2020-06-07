@@ -1,0 +1,56 @@
+Thanks for joining me in this tour of
+                    the Go Programming Language.
+                    There's a lot more to learn about Go
+                    than I could cover in this introductory course.
+                    And I'd like to tell you about some of
+                    the areas that I'm most interested in.
+                    Go has great tools for managing concurrency,
+                    there's a concept called a goroutine.
+                    A goroutine is a light-weight synchronized thread
+                    that's managed by the run time.
+                    Your application is actually a goroutine,
+                    but you can define and create your own goroutines
+                    that all run concurrently.
+                    To manage these, there's something called a channel,
+                    a typed conduit that lets you pass messages back and
+                    forth between multiple goroutines,
+                    and a select lets goroutines wait for
+                    multtiple communication operations.
+                    If you want to learn about concurrency,
+                    start with these three concepts,
+                    which you'll find information about in
+                    the Go documentation.
+                    If you're a developer who works with the web,
+                    you might be interested, for example,
+                    in building a RESTful API.
+                    There are many frameworks that
+                    have been created for Go.
+                    Here are some of the most commonly used frameworks:
+                    Beago, Martini, Gorilla, Gocraft, and Revel.
+                    These are community generated frameworks,
+                    and they're in various phases of development.
+                    But I've included their URLs here,
+                    so you can investigate them and
+                    see which ones you prefer.
+                    And if you're interested in working with databases from Go,
+                    you'll find that there's a lot of
+                    database functionality that's built into
+                    the language and the core library,
+                    and also a lot of community support.
+                    The standard database functions for
+                    working with databases are in the package database/sql,
+                    and there's a standardized interface for
+                    drivers that's defined in database/sql/driver.
+                    You can find drivers that available for
+                    most commonly used relational and NoSQL databases,
+                    and many of them are community driven.
+                    You can find a fairly up to date list here on
+                    github.com at this URL.
+                    And finally throughout this course I've talked about
+                    how Go differs from its ancestor languages.
+                    If you want to learn more about those courses,
+                    you can find information in these courses in the library.
+                    We have courses about C,
+                    C++, C#, Java,
+              
+                    and many other popular languages.
